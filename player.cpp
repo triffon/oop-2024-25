@@ -22,3 +22,8 @@ void Player::print() {
 Player::Player(Player const& other) : name(nullptr), score(other.score) {
     setName(other.name, " (копие)");
 }
+
+Player::~Player() {
+    std::cerr << "ВНИМАНИЕ! " << name << " умира..." << std::endl;
+    delete[] name; 
+}
