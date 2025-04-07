@@ -26,5 +26,22 @@ int main(int, char**){
     Player("Катнис Евърдийн", 50).print();
     delete pGandalf2;
 
+    size_t const N = 5;
+    Player players[N] = { gandalf, frodo, Player("Марио", 25), "Луиджи" };
+    for(int i = 0; i < N; i++)
+        players[i].print();
+
+
+    int* a = new int[100];
+    delete[] a;
+
+    Player* morePlayers = new Player[N]{ players[2], frodo };
+    for(int i = 0; i < N; i++)
+        morePlayers[i].print(); 
+
+
+
+    // !!! delete morePlayers;
+    delete[] morePlayers;
     return 0;
 }
