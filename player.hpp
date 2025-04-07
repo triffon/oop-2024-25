@@ -15,9 +15,13 @@ public:
     // конструкнори
 //   Player();
    Player(char const* _name = "<анонимен>", unsigned _score = 0);
-   Player(Player const& other);
+   Player(Player const& other);// = delete;
 
     void print();
+
+    // задаване на име на играча
+    void setName(char const* _name);
+
 };
 
 #endif // PLAYER_HPP
