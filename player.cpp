@@ -4,12 +4,14 @@
 
 //Player::Player() : name("<анонимен>"), score(0) {}
 
-void Player::setName(char const *_name) {
-    strncpy(name, _name, MAX_NAME);
-    name[MAX_NAME - 1] = '\0';
+void Player::setName(char const *_name, char const *_suffix) {
+    delete[] name;
+    name = new char[strlen(_name) + strlen(_suffix) + 1];
+    strcpy(name, _name);
+    strcat(name, _suffix);
 }
 
-Player::Player(char const* _name, unsigned _score) : score(_score) {
+Player::Player(char const* _name, unsigned _score) : name(nullptr), score(_score) {
     setName(_name);
 }
 
@@ -17,8 +19,6 @@ void Player::print() {
     std::cout << "Играч на име " << name << " има " << score << " точки " << std::endl;
 }
 
-Player::Player(Player const& other) : score(other.score) {
-    setName(other.name);
-    strncat(name, " (копие)", MAX_NAME - strlen(name));
-    name[MAX_NAME - 1] = '\0';    
+Player::Player(Player const& other) : name(nullptr), score(other.score) {
+    setName(other.name, " (копие)");
 }
