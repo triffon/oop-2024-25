@@ -9,12 +9,15 @@ private:
     // точки на играча
     unsigned score;
 
+    void swap(Player& other);
+
 public:
     // конструкнори
 //   Player();
    Player(char const* _name = "<анонимен>", unsigned _score = 0);
    Player(Player const& other);// = delete;
-   Player& operator=(Player const& other);
+//   Player& operator=(Player const& other);
+    Player& operator=(Player other);
    ~Player();
 
     void print();

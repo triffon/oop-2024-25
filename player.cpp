@@ -28,10 +28,20 @@ Player::~Player() {
     delete[] name; 
 }
 
-Player& Player::operator=(Player const& other) {
-    if (&other != this) {
-        setName(other.name, " (копие)");
-        score = other.score;
-    }
+// Player& Player::operator=(Player const& other) {
+//     if (&other != this) {
+//         setName(other.name, " (копие)");
+//         score = other.score;
+//     }
+//     return *this;
+// }
+
+void Player::swap(Player& other) {
+    std::swap(name, other.name);
+    std::swap(score, other.score);
+}
+
+Player& Player::operator=(Player other) {
+    swap(other);
     return *this;
 }
