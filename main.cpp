@@ -39,7 +39,16 @@ int main(int, char**){
     for(int i = 0; i < N; i++)
         morePlayers[i].print(); 
 
+    Player gandalf3 = gandalf;
 
+    Player gandalf4;
+    gandalf4 = gandalf;
+    gandalf4.setName("Гандалф Цветния");
+    gandalf.print();
+    gandalf4.print();
+
+    gandalf4 = gandalf4;
+    gandalf4.print();
 
     // !!! delete morePlayers;
     delete[] morePlayers;

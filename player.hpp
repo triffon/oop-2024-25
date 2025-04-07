@@ -14,6 +14,7 @@ public:
 //   Player();
    Player(char const* _name = "<анонимен>", unsigned _score = 0);
    Player(Player const& other);// = delete;
+   Player& operator=(Player const& other);
    ~Player();
 
     void print();

@@ -27,3 +27,11 @@ Player::~Player() {
     std::cerr << "ВНИМАНИЕ! " << name << " умира..." << std::endl;
     delete[] name; 
 }
+
+Player& Player::operator=(Player const& other) {
+    if (&other != this) {
+        setName(other.name, " (копие)");
+        score = other.score;
+    }
+    return *this;
+}
